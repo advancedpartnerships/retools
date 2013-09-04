@@ -9,7 +9,6 @@ rental_monthly      =       2340    # in $
 down_payment        =       25      # in percentage
 mortgate_rate       =       4.5     # in percentage
 mortgate_year       =       30      # in years
-month_per_year      =       12      # rentals collected in months
 property_tax        =       1.07    # in percentage
 insurance           =       800    # in $
 """
@@ -69,7 +68,7 @@ def check_down():
         y_value.append(i['return'])
         print "Down payment : %d %%, return %f %%" %( down_p, i['return'])
     plt.plot(x_range, y_value, 'ro')
-    plt.axis([0, 100, -5, 15])
+    plt.axis([0, 100, -5, 10])
     plt.show()
 
 def check_rental():
@@ -85,7 +84,7 @@ def check_rental():
 	y_value.append(i['return'])
         print "Monthly rental: $ %d, return %f %%" %( params['rental_monthly'] , i['return'])
     plt.plot(x_value, y_value, 'ro')
-    plt.axis([rental-300, rental+300, -5, 15])
+    plt.axis([rental-300, rental+300, -5, 10])
     plt.show()
     
 check_down()
